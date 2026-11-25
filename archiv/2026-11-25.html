@@ -123,12 +123,79 @@
   .download a { display: inline-block; background: #e8553d; color: #fff; text-decoration: none; font-weight: 700; font-size: 16px; padding: 12px 22px; border-radius: 999px; border: 3px solid #2b2622; }
   .download a:hover { background: #d9413a; }
   @media print { .download { display: none; } }
+
+  /* v2 Ergänzungen */
+  .datebox .today { font-size: 9pt; text-transform: uppercase; letter-spacing: 1pt; font-weight: 700; }
+  .datebox .season { display: inline-block; margin-top: 1mm; background: #fff; border: 0.5mm solid #2b2622; border-radius: 3mm; padding: 0.3mm 2.5mm; font-size: 9.5pt; font-weight: 700; }
+  .lead svg { width: 50mm; }
+  .lead p { font-size: 11.5pt; }
+  .card svg { margin-bottom: 1mm; }
+  .grid3 { display: flex; gap: 3mm; }
+  .grid3 > .box { flex: 1; }
+  .grid3 .box h3 { font-size: 12pt; }
+  .wx { background: #e6f2fb; }
+  .wx .now { display: flex; align-items: center; gap: 3mm; }
+  .wx .now svg { width: 18mm; height: 18mm; flex: none; }
+  .wx .temp { font-family: "Archivo Black", sans-serif; font-size: 20pt; line-height: 1; }
+  .wx .temp small { font-family: "Poppins", sans-serif; font-size: 10pt; font-weight: 500; color: #555; }
+  .wx .night { font-size: 9.5pt; color: #555; margin: 0.5mm 0 1mm; }
+  .wx .cond { font-size: 10.5pt; font-weight: 700; }
+  .wx .tip { margin-top: 1.5mm; font-size: 10.5pt; font-weight: 700; color: #1f5f8b; }
+  .wx .check { margin-top: 1.5mm; font-size: 9pt; }
+  .wx .check span { display: inline-flex; align-items: center; gap: 1mm; margin-right: 2mm; }
+  .wx .check i { width: 3.6mm; height: 3.6mm; border: 0.5mm solid #2b2622; border-radius: 0.8mm; display: inline-block; }
+  .abc { background: #fdf1e6; text-align: center; }
+  .abc svg { width: 100%; }
+  .abc .word { font-size: 11pt; font-weight: 700; }
+  .play { background: #eef6ea; text-align: center; }
+  .play svg { width: 100%; max-height: 40mm; margin-top: 1mm; }
+  .play p { font-size: 10.5pt; }
+  .grid3.small > .box { padding: 2.5mm 3.5mm; }
+  .grid3.small p { font-size: 10.5pt; }
+  .fact2 { background: #fff4cc; border-style: dashed !important; border-color: #c58b00 !important; }
+  @media screen and (max-width: 820px) {
+    .grid3 { flex-direction: column; gap: 12px; }
+    .wx .temp { font-size: 30px; } .wx .cond, .wx .tip { font-size: 16px; } .wx .check { font-size: 14px; }
+    .wx .now svg { width: 64px; height: 64px; } .wx .check i { width: 16px; height: 16px; }
+    .abc svg { max-width: 320px; } .play svg { max-width: 340px; max-height: none; }
+    .abc .word, .play p, .grid3.small p { font-size: 16px; }
+    .datebox .today, .datebox .season { font-size: 12px; }
+  }
+
+  /* Interaktiv am Bildschirm, statisch im Druck */
+  .print-only { display: none; }
+  .draw-wrap { position: relative; }
+  .draw-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+  .reset { display: inline-block; margin-top: 1.5mm; font: 600 9pt "Poppins", sans-serif; background: #fff; border: 0.5mm solid #2b2622; border-radius: 3mm; padding: 0.5mm 3mm; cursor: pointer; }
+  .wx .check label { display: inline-flex; align-items: center; gap: 1mm; margin-right: 2mm; cursor: pointer; }
+  .wx .check input { appearance: none; -webkit-appearance: none; width: 3.6mm; height: 3.6mm; border: 0.5mm solid #2b2622; border-radius: 0.8mm; margin: 0; background: #fff; display: grid; place-content: center; cursor: pointer; }
+  .wx .check input:checked::after { content: ""; width: 2mm; height: 1mm; border-left: 0.6mm solid #e8553d; border-bottom: 0.6mm solid #e8553d; transform: rotate(-45deg) translate(0.1mm,-0.2mm); }
+  .joke .a { cursor: pointer; transition: transform .3s; }
+  .joke .a.open { transform: none; text-align: left; }
+  @media print {
+    .screen-only, .draw-wrap canvas, .reset { display: none !important; }
+    .print-only { display: inline !important; }
+  }
+  @media screen and (max-width: 820px) {
+    .wx .check input { width: 22px; height: 22px; }
+    .wx .check input:checked::after { width: 11px; height: 6px; border-width: 0 0 3px 3px; }
+    .wx .check label { font-size: 15px; margin: 4px 10px 4px 0; }
+    .reset { font-size: 14px; padding: 6px 14px; border-radius: 16px; }
+  }
+
+  /* Auswahlrätsel: am Bildschirm antippen, im Druck einkreisen */
+  .choices { display: flex; gap: 3mm; justify-content: center; margin-top: 1mm; }
+  .choice { min-width: 8mm; height: 8mm; padding: 0 1.5mm; border: 0.6mm solid #2b2622; border-radius: 4mm; background: #fff; font: 700 12pt "Poppins", sans-serif; color: #2b2622; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+  .choice svg { height: 7mm; width: auto; }
+  .choice.right { background: #bfe5b0; border-color: #3f6e1e; }
+  .choice.wrong { opacity: .35; }
+  @media print { .choice.right, .choice.wrong { background: #fff; opacity: 1; border-color: #2b2622; } }
+  @media screen and (max-width: 820px) { .choice { min-width: 44px; height: 44px; font-size: 18px; border-radius: 22px; } .choice svg { height: 34px; } }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- KOPF -->
   <header class="masthead">
     <svg viewBox="0 0 100 100" aria-hidden="true">
       <path d="M38 18 q-6 -8 0 -14 M50 18 q-6 -8 0 -14 M62 18 q-6 -8 0 -14" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/>
@@ -143,10 +210,9 @@
       <div class="title">Der Kakao Kurier</div>
       <div class="subtitle">Die Zeitung zum Frühstück. Zum Vorlesen und Mitmachen.</div>
     </div>
-    <div class="datebox"><strong>Mittwoch</strong>25. November 2026<br>Ausgabe Nr. 1</div>
+    <div class="datebox"><span class="today">Heute ist</span><strong>Mittwoch</strong>25. November 2026<br><span class="season">Herbst</span> · Nr. 1</div>
   </header>
 
-  <!-- HAUPTGESCHICHTE -->
   <section class="lead">
     <svg viewBox="0 0 220 150" aria-hidden="true">
       <ellipse cx="110" cy="140" rx="95" ry="7" fill="#cfe3f1"/>
@@ -176,14 +242,12 @@
       <h2>Ein Nashornbaby streckt die Zunge raus!</h2>
       <p>Im Zoo in Basel ist ein Nashornbaby geboren. Es heißt <b>Xshama</b>. Seine Mama heißt Shakti. Beiden geht es gut.</p>
       <p>Auf einem Foto streckt das Baby frech die Zunge raus. Für Papa Puri ist es das allererste Kind.</p>
-      <p>Basel liegt in der Schweiz. Das ist gar nicht weit weg von uns.</p>
     </div>
   </section>
 
-  <!-- ZWEI SPALTEN -->
   <div class="row">
     <article class="card moon">
-      <svg viewBox="0 0 200 80" width="48mm" aria-hidden="true">
+      <svg viewBox="0 0 200 80" width="40mm" aria-hidden="true">
         <rect x="10" y="4" width="180" height="72" rx="14" fill="#2e3a87"/>
         <g fill="#fff"><circle cx="30" cy="20" r="1.8"/><circle cx="58" cy="58" r="1.5"/><circle cx="150" cy="16" r="1.8"/><circle cx="172" cy="52" r="1.5"/><circle cx="44" cy="40" r="1.2"/><circle cx="160" cy="34" r="1.2"/></g>
         <circle cx="100" cy="40" r="30" fill="#fff6c7" opacity=".35"/>
@@ -194,11 +258,10 @@
       </svg>
       <span class="tag">Himmel</span>
       <h2>Gestern war Supermond!</h2>
-      <p>Gestern Abend stand ein Supermond am Himmel. Der Mond war der Erde besonders nah. Darum sah er etwas größer und heller aus als sonst. Heute Abend ist er noch fast ganz rund. Schau mit Mama oder Papa aus dem Fenster! Der nächste Supermond kommt an Heiligabend.</p>
+      <p>Gestern stand ein Supermond am Himmel. Der Mond war der Erde besonders nah. Darum sah er größer und heller aus. Heute Abend ist er noch fast ganz rund. Schau mal aus dem Fenster!</p>
     </article>
-
     <article class="card advent">
-      <svg viewBox="0 0 200 80" width="44mm" aria-hidden="true">
+      <svg viewBox="0 0 200 80" width="38mm" aria-hidden="true">
         <ellipse cx="100" cy="62" rx="80" ry="14" fill="#3f7a3a" stroke="#2b2622" stroke-width="2.5"/>
         <ellipse cx="100" cy="60" rx="56" ry="7" fill="#fdecec"/>
         <circle cx="40" cy="62" r="4" fill="#e8553d"/><circle cx="160" cy="62" r="4" fill="#e8553d"/>
@@ -212,62 +275,76 @@
       </svg>
       <span class="tag">Advent</span>
       <h2>Am Sonntag brennt die erste Kerze</h2>
-      <p>Am Sonntag ist der 1. Advent. Dann zünden wir die erste Kerze am Adventskranz an. In vielen Städten haben schon Weihnachtsmärkte geöffnet. In Nürnberg eröffnet am Freitag das Christkind den großen Markt.</p>
+      <p>Am Sonntag ist der 1. Advent. Dann zünden wir die erste Kerze am Adventskranz an. In Nürnberg eröffnet am Freitag das Christkind den großen Weihnachtsmarkt.</p>
     </article>
   </div>
 
-  <!-- WUSSTEST DU -->
-  <div class="fact">
-    <div class="big">?!</div>
-    <p><b>Wusstest du?</b> Das Horn vom Nashorn ist nicht aus Knochen. Es ist aus dem gleichen Stoff wie deine Fingernägel und deine Haare.</p>
-  </div>
-
-  <!-- MITMACHEN -->
-  <div class="bottom">
-    <div class="box weather">
-      <h3>Wetterdetektiv</h3>
-      <p>Schau aus dem Fenster. Wie ist das Wetter heute? Kreuze an!</p>
-      <div class="icons">
-        <div class="ic"><span class="chk"></span>
-          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8" fill="#f6b93b" stroke="#2b2622" stroke-width="2"/><g stroke="#2b2622" stroke-width="2" stroke-linecap="round"><path d="M20 4v5M20 31v5M4 20h5M31 20h5M8.7 8.7l3.5 3.5M27.8 27.8l3.5 3.5M8.7 31.3l3.5-3.5M27.8 12.2l3.5-3.5"/></g></svg>Sonne</div>
-        <div class="ic"><span class="chk"></span>
-          <svg viewBox="0 0 40 40"><path d="M10 28a7 7 0 0 1 1-14a9 9 0 0 1 17 2a6 6 0 0 1 1 12z" fill="#fff" stroke="#2b2622" stroke-width="2"/></svg>Wolken</div>
-        <div class="ic"><span class="chk"></span>
-          <svg viewBox="0 0 40 40"><path d="M10 22a7 7 0 0 1 1-14a9 9 0 0 1 17 2a6 6 0 0 1 1 12z" fill="#dfe6ee" stroke="#2b2622" stroke-width="2"/><g stroke="#3b82c4" stroke-width="2.5" stroke-linecap="round"><path d="M14 27l-2 5M21 27l-2 5M28 27l-2 5"/></g></svg>Regen</div>
-        <div class="ic"><span class="chk"></span>
-          <svg viewBox="0 0 40 40"><g stroke="#3b82c4" stroke-width="2.2" stroke-linecap="round"><path d="M20 5v30M7 12.5l26 15M7 27.5l26-15"/><path d="M16 7l4 3l4-3M16 33l4-3l4 3"/></g></svg>Schnee</div>
-      </div>
+  <div class="grid3">
+    <div class="box wx">
+      <h3>Wetter in Frankfurt</h3>
+      <div class="now"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="22" cy="22" r="11" fill="#f6b93b" stroke="#2b2622" stroke-width="2.5"/><g stroke="#2b2622" stroke-width="2.5" stroke-linecap="round"><path d="M22 3v5M3 22h5M8.5 8.5l3.5 3.5M35.5 8.5l-3.5 3.5"/></g><path d="M18 50a9 9 0 0 1 1-18a12 12 0 0 1 22 3a8 8 0 0 1 1 15z" fill="#fff" stroke="#2b2622" stroke-width="2.5"/></svg><div><div class="temp">1°</div><div class="night">nachts minus 3°</div><div class="cond">Teils sonnig, kein Regen</div></div></div>
+      <div class="tip">Brrr! Mütze, Schal und dicke Jacke an!</div>
+      <div class="check">Stimmt das? <span class="screen-only">Tippe an:</span><span class="print-only">Kreuze an:</span><br><label><input type="checkbox">Sonne</label><label><input type="checkbox">Wolken</label><label><input type="checkbox">Regen</label><label><input type="checkbox">Schnee</label></div>
     </div>
-
-    <div class="box puzzle">
-      <h3>Zähl mal!</h3>
-      <p>Wie viele Sterne siehst du?</p>
-      <svg viewBox="0 0 120 70" aria-hidden="true">
-        <defs><path id="st" d="M0 -9 L2.6 -2.8 L9 -2.8 L3.8 1.2 L5.6 7.5 L0 3.8 L-5.6 7.5 L-3.8 1.2 L-9 -2.8 L-2.6 -2.8 Z"/></defs>
-        <g fill="#f6b93b" stroke="#2b2622" stroke-width="1.5">
-          <use href="#st" x="18" y="16"/><use href="#st" x="52" y="12"/><use href="#st" x="92" y="18"/>
-          <use href="#st" x="34" y="44"/><use href="#st" x="74" y="40"/><use href="#st" x="104" y="54"/>
-          <use href="#st" x="14" y="58"/>
-        </g>
-      </svg>
-      <div class="answer"><span>5</span><span>6</span><span>7</span></div>
+    <div class="box abc">
+      <h3>Buchstabe des Tages</h3>
+      <div class="draw-wrap" data-line="7"><svg viewBox="0 0 200 112" aria-hidden="true">
+  <line x1="6" y1="100" x2="194" y2="100" stroke="#cfc6bb" stroke-width="1.5"/>
+  <line x1="6" y1="56" x2="194" y2="56" stroke="#e6ded4" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <g font-family="Poppins" font-weight="700" fill="#fffaf3" stroke="#6f665d" stroke-width="2.4" stroke-dasharray="5 4" stroke-linejoin="round" text-anchor="middle">
+    <text x="52" y="100" font-size="106">A</text>
+    <text x="153" y="100" font-size="106">a</text>
+  </g>
+</svg><canvas></canvas></div>
+      <div class="word">A wie Advent. <span class="screen-only">Fahr mit dem Finger nach!</span><span class="print-only">Fahr die Punkte nach!</span></div>
+      <button class="reset" type="button">Nochmal</button>
     </div>
-
-    <div class="right">
-      <div class="box joke">
-        <h3>Witz des Tages</h3>
-        <p class="q">Was ist grün und klopft an die Tür?</p>
-        <p class="a">Ein Klopfsalat!</p>
-      </div>
-      <div class="box question">
-        <h3>Frühstücksfrage</h3>
-        <p>Wie sieht der Mond heute Abend aus? Erzähl es morgen beim Frühstück!</p>
-      </div>
+    <div class="box play">
+      <h3>Labyrinth</h3>
+      <p>Hilf dem Nashornbaby zum Herz! <span class="screen-only">Mal den Weg mit dem Finger.</span></p>
+      <div class="draw-wrap" data-line="5"><svg viewBox="-22 0 188 114" aria-hidden="true"><g stroke="#2b2622" stroke-width="2.6" stroke-linecap="round"><line x1="21" y1="4" x2="21" y2="21"/><line x1="21" y1="21" x2="38" y2="21"/><line x1="55" y1="4" x2="55" y2="21"/><line x1="89" y1="21" x2="106" y2="21"/><line x1="106" y1="21" x2="123" y2="21"/><line x1="123" y1="21" x2="140" y2="21"/><line x1="4" y1="38" x2="21" y2="38"/><line x1="38" y1="21" x2="38" y2="38"/><line x1="72" y1="21" x2="72" y2="38"/><line x1="55" y1="38" x2="72" y2="38"/><line x1="72" y1="38" x2="89" y2="38"/><line x1="89" y1="38" x2="106" y2="38"/><line x1="106" y1="38" x2="123" y2="38"/><line x1="21" y1="38" x2="21" y2="55"/><line x1="38" y1="38" x2="38" y2="55"/><line x1="55" y1="38" x2="55" y2="55"/><line x1="38" y1="55" x2="55" y2="55"/><line x1="89" y1="38" x2="89" y2="55"/><line x1="106" y1="55" x2="123" y2="55"/><line x1="21" y1="55" x2="21" y2="72"/><line x1="21" y1="72" x2="38" y2="72"/><line x1="38" y1="72" x2="55" y2="72"/><line x1="72" y1="55" x2="72" y2="72"/><line x1="55" y1="72" x2="72" y2="72"/><line x1="72" y1="72" x2="89" y2="72"/><line x1="106" y1="55" x2="106" y2="72"/><line x1="89" y1="72" x2="106" y2="72"/><line x1="123" y1="55" x2="123" y2="72"/><line x1="21" y1="89" x2="38" y2="89"/><line x1="55" y1="72" x2="55" y2="89"/><line x1="38" y1="89" x2="55" y2="89"/><line x1="89" y1="89" x2="106" y2="89"/><line x1="123" y1="72" x2="123" y2="89"/><line x1="106" y1="89" x2="123" y2="89"/><line x1="72" y1="89" x2="72" y2="106"/><line x1="4" y1="4" x2="140" y2="4"/><line x1="4" y1="106" x2="140" y2="106"/><line x1="4" y1="21" x2="4" y2="106"/><line x1="140" y1="4" x2="140" y2="89"/></g><g transform="translate(-12 12.5)"><circle r="8" fill="#b3bcc4" stroke="#2b2622" stroke-width="2"/><path d="M-7 -3 q-4 -7 1 -9 q1 5 -1 9z" fill="#f2efe8" stroke="#2b2622" stroke-width="1.5"/><circle cx="2" cy="-1" r="1.4" fill="#2b2622"/></g><path transform="translate(153 98.5) scale(.9)" d="M0 6 C-10 -2 -8 -10 -2 -9 C0 -9 0 -7 0 -6 C0 -7 0 -9 2 -9 C8 -10 10 -2 0 6Z" fill="#e8553d" stroke="#2b2622" stroke-width="1.6"/></svg><canvas></canvas></div>
+      <button class="reset" type="button">Nochmal</button>
     </div>
   </div>
 
-  <div class="footer">Quellen: plattformj.ch (Zoo Basel), starwalk.space, Stadt Nürnberg · Der Kakao Kurier erscheint jeden Morgen</div>
+  <div class="grid3 small">
+    <div class="box fact2">
+      <h3>Wusstest du?</h3>
+      <p>Das Horn vom Nashorn ist aus dem gleichen Stoff wie deine Fingernägel.</p>
+    </div>
+    <div class="box joke">
+      <h3>Witz des Tages</h3>
+      <p class="q">Was ist grün und klopft an die Tür?</p>
+      <p class="a" title="Antippen">Ein Klopfsalat!</p>
+    </div>
+    <div class="box question">
+      <h3>Frühstücksfrage</h3>
+      <p>Wie sieht der Mond heute Abend aus?</p>
+    </div>
+  </div>
+
+  <div class="footer">Quellen: plattformj.ch (Zoo Basel), starwalk.space, nuernberg.de, wetter.com · Der Kakao Kurier erscheint jeden Morgen</div>
 </div>
 <div class="download"><a href="/archiv/2026-11-25.pdf" download="Kakao-Kurier-2026-11-25.pdf">PDF zum Ausdrucken herunterladen</a></div>
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('print').matches) return;
+  document.querySelectorAll('.draw-wrap').forEach(function(wrap){
+    var cv = wrap.querySelector('canvas'), ctx = cv.getContext('2d'), lw = +wrap.dataset.line || 6, drawing = false;
+    function size(){ var r = wrap.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+      cv.width = r.width * d; cv.height = r.height * d; ctx.setTransform(d,0,0,d,0,0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#e8553d'; ctx.lineWidth = lw; }
+    function pos(e){ var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+    cv.addEventListener('pointerdown', function(e){ drawing = true; cv.setPointerCapture(e.pointerId); var p = pos(e); ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(p[0]+0.1, p[1]); ctx.stroke(); e.preventDefault(); });
+    cv.addEventListener('pointermove', function(e){ if (!drawing) return; var p = pos(e); ctx.lineTo(p[0], p[1]); ctx.stroke(); e.preventDefault(); });
+    ['pointerup','pointercancel','pointerleave'].forEach(function(t){ cv.addEventListener(t, function(){ drawing = false; }); });
+    var btn = wrap.parentElement.querySelector('.reset'); if (btn) btn.addEventListener('click', function(){ size(); });
+    size(); var w = wrap.getBoundingClientRect().width;
+    window.addEventListener('resize', function(){ var n = wrap.getBoundingClientRect().width; if (Math.abs(n - w) > 2) { w = n; size(); } });
+  });
+  document.querySelectorAll('.choice').forEach(function(c){ c.addEventListener('click', function(){ c.classList.add(c.dataset.ok === '1' ? 'right' : 'wrong'); }); });
+  document.querySelectorAll('.joke .a').forEach(function(a){ a.addEventListener('click', function(){ a.classList.toggle('open'); }); });
+})();
+</script>
 </body>
 </html>

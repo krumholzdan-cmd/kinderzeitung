@@ -8,3 +8,6 @@ Jede Ausgabe trägt hier ihre Meldungen ein. Vor jeder neuen Ausgabe lesen, dami
 - Advent: 1. Advent am 29.11., Weihnachtsmärkte, Christkindlesmarkt Nürnberg (nuernberg.de)
 - Wusstest du: Nashornhorn aus Keratin
 - Witz: Klopfsalat
+- Wetter: Frankfurt am Main, 1 Grad, nachts minus 3 Grad, teils sonnig (wetter.com)
+- Buchstabe: A (A wie Advent)
+- Mitmachen: Labyrinth
