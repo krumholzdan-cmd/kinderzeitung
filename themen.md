@@ -21,3 +21,13 @@ Jede Ausgabe trägt hier ihre Meldungen ein. Vor jeder neuen Ausgabe lesen, dami
 - Wetter: keine Werte (wetter.com nicht abrufbar), nur Wetterdetektiv
 - Buchstabe: B (B wie Baby)
 - Mitmachen: Schatten finden
+
+## 2026-11-27
+- Advent: Weihnachtsbaum Nikolaus vor dem Frankfurter Römer, Fichte, 27 Meter, 50 Jahre, aus Wald-Königsleiten in Österreich (hessenschau.de)
+- Tiere: Urson (Baumstachler) zieht in die Polarwelt im Tierpark Hellabrunn, rund 30.000 Stacheln, Männchen folgt (muenchen.de)
+- Wissen: Warum bleiben Fichte und Tanne im Winter grün? Wachsschicht, Frostschutz, Nadeln jahrelang am Zweig (oekotest.de, dpa)
+- Wusstest du: Lärche ist Nadelbaum und verliert im Herbst ihre Nadeln
+- Witz: Purzelbaum (Welcher Baum hat keine Blätter und keine Nadeln?)
+- Wetter: Frankfurt am Main, 1 Grad, nachts minus 1 Grad, wechselnd bewölkt, 0 % Regen (wetter.com)
+- Buchstabe: C (C wie Christbaum)
+- Mitmachen: Muster fortsetzen
