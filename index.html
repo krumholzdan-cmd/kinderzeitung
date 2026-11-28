@@ -24,6 +24,9 @@
     padding: 8mm 9mm 7mm; display: flex; flex-direction: column; gap: 3mm; overflow: hidden;
   }
   @media print { html, body { background: none; } .page { margin: 0; } }
+  /* Am Bildschirm darf die Seite wachsen (Knöpfe brauchen Platz), im Druck bleibt sie genau A4 */
+  @media screen { .page { height: auto; min-height: 297mm; overflow: visible; } }
+  .wx .check span.print-only { display: none; }
 
   /* Kopf */
   .masthead {
@@ -285,8 +288,9 @@
 
   <div class="grid3">
     <div class="box wx">
-      <h3>Wetterdetektiv</h3>
-      <p>Schau aus dem Fenster! Wie ist das Wetter heute?</p>
+      <h3>Wetter in Frankfurt</h3>
+      <div class="now"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="22" cy="22" r="11" fill="#f6b93b" stroke="#2b2622" stroke-width="2.5"/><g stroke="#2b2622" stroke-width="2.5" stroke-linecap="round"><path d="M22 3v5M3 22h5M8.5 8.5l3.5 3.5M35.5 8.5l-3.5 3.5"/></g><path d="M18 50a9 9 0 0 1 1-18a12 12 0 0 1 22 3a8 8 0 0 1 1 15z" fill="#fff" stroke="#2b2622" stroke-width="2.5"/></svg><div><div class="temp">3°</div><div class="night">nachts 0°</div><div class="cond">Teils sonnig, kein Regen</div></div></div>
+      <div class="tip">Kalt! Mütze, Handschuhe und dicke Jacke an!</div>
       <div class="check">Stimmt das? <span class="screen-only">Tippe an:</span><span class="print-only">Kreuze an:</span><br><label><input type="checkbox">Sonne</label><label><input type="checkbox">Wolken</label><label><input type="checkbox">Regen</label><label><input type="checkbox">Schnee</label></div>
     </div>
     <div class="box abc">
@@ -336,7 +340,7 @@
     </div>
   </div>
 
-  <div class="footer">Quellen: Jüdische Allgemeine, muenchen.de, sterngucker.de, nabu.de · Der Kakao Kurier erscheint jeden Morgen</div>
+  <div class="footer">Quellen: Jüdische Allgemeine, muenchen.de, sterngucker.de, nabu.de, wetter.com · Der Kakao Kurier erscheint jeden Morgen</div>
 </div>
 <div class="download"><a href="/archiv/2026-11-28.pdf" download="Kakao-Kurier-2026-11-28.pdf">PDF zum Ausdrucken herunterladen</a></div>
 <script>

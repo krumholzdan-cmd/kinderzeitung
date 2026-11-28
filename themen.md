@@ -38,7 +38,7 @@ Jede Ausgabe trägt hier ihre Meldungen ein. Vor jeder neuen Ausgabe lesen, dami
 - Wissen: Igel halten Winterschlaf von November bis April, Herz schlägt statt 200 nur 5 Mal pro Minute, Verstecke in Stein und Reisighaufen (nabu.de)
 - Wusstest du: Dreidel ist ein Kreisel mit vier hebräischen Buchstaben
 - Witz: Igel und Kaktus (Hallo Mama!)
-- Wetter: keine Werte (wetter.com nicht abrufbar), nur Wetterdetektiv
+- Wetter: Frankfurt am Main, 3 Grad, nachts 0 Grad, teils sonnig, 0 % Regen (wetter.com, nachträglich ergänzt)
 - Buchstabe: D (D wie Dreidel)
 - Mitmachen: Malfläche (Flammen auf die Chanukkia malen)
 - Hebräisch: Schamasch (Diener, die Kerze, mit der die Chanukkakerzen angezündet werden; juedische-allgemeine.de)
