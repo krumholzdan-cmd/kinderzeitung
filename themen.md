@@ -31,3 +31,14 @@ Jede Ausgabe trägt hier ihre Meldungen ein. Vor jeder neuen Ausgabe lesen, dami
 - Wetter: Frankfurt am Main, 1 Grad, nachts minus 1 Grad, wechselnd bewölkt, 0 % Regen (wetter.com)
 - Buchstabe: C (C wie Christbaum)
 - Mitmachen: Muster fortsetzen
+
+## 2026-11-28
+- Feste: Chanukka beginnt am Abend des 4.12. (bis 12.12.), Chanukkia mit acht Kerzen, jeden Abend eine mehr, Latkes und Sufganiot (juedische-allgemeine.de, muenchen.de)
+- Himmel: Venus hell am Morgenhimmel, am 5.12. gegen 6:30 Uhr schmale Mondsichel bei der Venus (sterngucker.de)
+- Wissen: Igel halten Winterschlaf von November bis April, Herz schlägt statt 200 nur 5 Mal pro Minute, Verstecke in Stein und Reisighaufen (nabu.de)
+- Wusstest du: Dreidel ist ein Kreisel mit vier hebräischen Buchstaben
+- Witz: Igel und Kaktus (Hallo Mama!)
+- Wetter: keine Werte (wetter.com nicht abrufbar), nur Wetterdetektiv
+- Buchstabe: D (D wie Dreidel)
+- Mitmachen: Malfläche (Flammen auf die Chanukkia malen)
+- Hebräisch: Schamasch (Diener, die Kerze, mit der die Chanukkakerzen angezündet werden; juedische-allgemeine.de)
